@@ -1,0 +1,17 @@
+[config]
+rbid  = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+rbpwd = XXXXXXXXXXXX
+serialPortDev = /dev/ttyUSB0
+#ipv6 = XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX
+#channel = XX
+#panid = XXXX
+
+[zabbix]
+command = /usr/bin/zabbix_sender 
+options = --tls-connect psk --tls-psk-identity identity --tls-psk-file /etc/zabbix/zabbix_agentd.psk -v -z ZabbixServer
+host = hostname
+
+[files]
+debuglog     = /var/power/debug
+minutelog    = /var/power/logfile
+integrations = /var/power/intlog
