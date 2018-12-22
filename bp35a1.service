@@ -1,0 +1,14 @@
+[Unit]
+Description=Power monitor
+After=network.target
+
+[Service]
+Type=forking
+Restart=on-failure
+KillMode=control-group
+ExecStart=/var/power/bp35.sh
+ExecStop=/bin/pkill -SIGTERM bp35a1_v02_loop.py
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
